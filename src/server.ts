@@ -1,24 +1,11 @@
+import './database';
+import 'reflect-metadata';
 import express from "express";
+import { router } from './routes';
 
 const app = express();
-app.get('/nlw', (request, response)=>{
-    return response.json({
-        router: "localhost",
-        name: 'nlw-together',
-        edtion: '062021' 
-    })
-})
-
-app.post('/nlw', (request, response)=>{
-    return response.json({
-        router: "localhost",
-        name: 'nlw-together',
-        edtion: '062021',
-        method: 'POST'
-    })
-})
-
-
+app.use(express.json())
+app.use(router)
 
 app.listen(3000, ()=>{
     console.info('Server is running (Port: 3000)')
