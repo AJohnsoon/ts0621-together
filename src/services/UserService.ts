@@ -7,7 +7,7 @@ interface IUserRequest {
     admin?: boolean;
 }
 
-class UsersService {
+class UserService {
     async execute({name, email, admin} : IUserRequest){
         const userRepository = getCustomRepository(UsersRepository)
 
@@ -28,4 +28,4 @@ class UsersService {
     }
 }
 
-export { UsersService }
+export { UserService }
